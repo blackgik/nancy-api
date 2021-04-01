@@ -18,4 +18,8 @@ router.post('/data-nancy/require', async (req, res)=> {
     }
 })
 
+router.get('/', (req,res)=> {
+    res.send({success:true, message: 'hello'})
+})
+
 module.exports = router;
