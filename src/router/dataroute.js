@@ -12,6 +12,7 @@ router.post('/data-nancy/require', async (req, res)=> {
     try {
         await dataRequired.save()
         await sendNancyMail(dataRequired)
+        await dataRequired.remove()
         res.status(201).send({success: true, dataRequired})
     } catch (error) {
         res.status(500).send({success:false, message:'conflict, check the data you are Passing'})
